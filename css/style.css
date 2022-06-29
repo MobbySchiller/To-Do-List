@@ -115,7 +115,7 @@ input:focus{
 .task-area {
     flex-grow: 1;
     padding-right: 5px;
-    padding-left: 30px;
+    padding-left: 28px;
     background-color: white;
     height: 200px;
 }
@@ -124,8 +124,7 @@ input:focus{
     padding-top: 3px;
     padding-bottom: 2px;
     font-size: 1.6rem;
-    text-decoration: underline;
-    list-style: decimal;
+    list-style: circle;
 }
 
 .task-area__remove-button {
