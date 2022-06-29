@@ -25,18 +25,23 @@ class ToDoList {
     }
 
     addTask(task) {
-        const liElement = document.createElement('li');
-        liElement.setAttribute('class', 'task-area__list-element')
-        liElement.innerHTML = `${task} <button class="task-area__remove-button border border--concave">usuń</button>`;
-        this.output.appendChild(liElement);
-        liElement.querySelector('button').addEventListener('click', (event) => this.removeTask(event))
-        this.numberOfTasks++
-        this.countTasks();
+        if (this.numberOfTasks < 12) {
+            const liElement = document.createElement('li');
+            liElement.setAttribute('class', 'task-area__list-element')
+            liElement.innerHTML = `${task} <button class="task-area__remove-button border border--concave"><span class="task-area__remove-button-letter">D</span>one</button>`;
+            this.output.appendChild(liElement);
+            liElement.querySelector('button').addEventListener('click', (event) => this.removeTask(event))
+            this.numberOfTasks++
+            this.countTasks();
+        } else {
+            alert("There is no room for another task. Please complete your active task(s).")
+        }
     }
 
     removeTask(event) {
         event.target.parentNode.remove();
         this.numberOfTasks--;
+        console.log(this.numberOfTasks);
         this.countTasks();
     }
 
